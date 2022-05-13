@@ -1,0 +1,9 @@
+{
+	"name": "ADFSSISMig",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5fe054a2-7721-4a41-a0cd-a56be0b74f48",
+		"tenantId": "4ad35772-3bc9-4822-aacf-902771a885ea"
+	}
+}
