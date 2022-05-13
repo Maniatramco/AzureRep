@@ -1,0 +1,77 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Asset No",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Asset Category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Make",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Model",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Owner",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Serial No",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Acquired",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "Cost",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "Warranty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Tax Scale",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Supplier No",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Comments",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SSMA_TimeStamp",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Asset Items"
+		}
+	}
+}
