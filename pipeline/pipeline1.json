@@ -1,0 +1,108 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema": {
+								"value": "@pipeline().parameters.schemapip",
+								"type": "Expression"
+							},
+							"TableName": {
+								"value": "@pipeline().parameters.tblnmpip",
+								"type": "Expression"
+							},
+							"srvnmds": {
+								"value": "@pipeline().parameters.srvnmpip",
+								"type": "Expression"
+							},
+							"dbnmds": {
+								"value": "@pipeline().parameters.dbnamepip",
+								"type": "Expression"
+							},
+							"unameds": {
+								"value": "@pipeline().parameters.usnmpip",
+								"type": "Expression"
+							},
+							"pwddss": {
+								"value": "@pipeline().parameters.pwdsspip",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"schemapip": {
+				"type": "String"
+			},
+			"tblnmpip": {
+				"type": "String"
+			},
+			"srvnmpip": {
+				"type": "String"
+			},
+			"dbnamepip": {
+				"type": "String"
+			},
+			"usnmpip": {
+				"type": "String"
+			},
+			"pwdsspip": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-06-04T07:35:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sourcetable",
+				"type": "varchar"
+			},
+			{
+				"name": "sourceschema",
+				"type": "varchar"
+			},
+			{
+				"name": "sourcecolumns",
+				"type": "varchar"
+			},
+			{
+				"name": "filtercondition",
+				"type": "varchar"
+			},
+			{
+				"name": "targetcontainer",
+				"type": "varchar"
+			},
+			{
+				"name": "targetrootfolder",
+				"type": "varchar"
+			},
+			{
+				"name": "targetfolder",
+				"type": "varchar"
+			},
+			{
+				"name": "targetfile",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tbl_config"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
