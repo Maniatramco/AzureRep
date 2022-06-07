@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_tgl_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_tgl_20220607"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Metadata",
+			"table": "MainControlTable_tgl"
+		}
+	}
+}
