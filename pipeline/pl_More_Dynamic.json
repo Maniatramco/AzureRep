@@ -76,7 +76,7 @@
 								{
 									"activity": "Execute Pipeline1",
 									"dependencyConditions": [
-										"Succeeded"
+										"Failed"
 									]
 								}
 							],
@@ -92,7 +92,7 @@
 								"url": "https://prod-24.centralus.logic.azure.com:443/workflows/1f4bee425dbc4635bce462741a522d60/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YbC-RD4XMvpKgS0AD-ByvCt5iU-E2gDuFq3LbLItl4E",
 								"method": "POST",
 								"body": {
-									"value": "{\n\"PipelineName: \"@{pipeline().Pipeline}\",\n\"ErrorMessage\":\"@{activity('Execute Pipeline1').Error.Message}\"\n}",
+									"value": "{\n\"pipelinename\":\"@{pipeline().Pipeline}\",\n\"ErrorMessage\":\"@{activity('Execute Pipeline1').Error.Message}\"\n}",
 									"type": "Expression"
 								}
 							}
